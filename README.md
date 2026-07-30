@@ -81,13 +81,9 @@ the virtual controller available before starting the game.
 
 ### DJI RC 2 with Liftoff on Steam Deck
 
-<video
-controls
-width="850"
-src="https://github.com/voluminor/dji-rc-joystick/raw/refs/heads/main/.github/media/steamdeck-rc.mp4">
-</video>
+<video width="850" alt="Liftoff on Steam Deck"  src="https://github.com/user-attachments/assets/112f7d0d-6a5a-4d01-8a44-08ed0122d9b6"></video>
 
-[Open the video separately](https://github.com/voluminor/dji-rc-joystick/blob/main/.github/media/steamdeck-rc.mp4)
+[Open the video separately](.github/media/steamdeck-rc.mp4)
 
 The video shows a DJI RC 2 controlling Liftoff through a virtual gamepad on
 Steam Deck.
