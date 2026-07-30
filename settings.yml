@@ -1,0 +1,157 @@
+logging:
+  console:
+    enabled:
+      type: bool
+      value: true
+      usage: "Writes colored human-readable logs to the console."
+    level:
+      enum_name: console-log-level
+      enum: [ trace, debug, info, warn, error, fatal, panic ]
+      value: info
+      usage: "Minimum console log level."
+  file:
+    enabled:
+      type: bool
+      value: true
+      usage: "Writes JSON logs to a rotating file."
+    level:
+      enum_name: file-log-level
+      enum: [ trace, debug, info, warn, error, fatal, panic ]
+      value: error
+      usage: "Minimum file log level."
+    dir:
+      type: string
+      value: logs
+      usage: "Log directory. Relative paths resolve from the active settings file directory."
+    max_size:
+      type: size
+      value: 100mb
+      min: 1mb
+      max: 1gb
+      usage: "Maximum log file size before rotation."
+    max_backups:
+      type: uint
+      value: 30
+      min: 1
+      max: 1000
+      usage: "Maximum number of rotated log files."
+    max_age:
+      type: time.Duration
+      value: 336h
+      min: 24h
+      usage: "Maximum age of rotated log files."
+    compress:
+      type: bool
+      value: true
+      usage: "Compresses rotated log files."
+
+ui:
+  text_size:
+    type: float
+    value: 1.0
+    min: 0.2
+    max: 8.0
+    usage: "Text size multiplier."
+  dark_mode:
+    type: bool
+    value: true
+    usage: "Enables the dark color theme."
+  language:
+    type: string
+    value: en
+    usage: "User interface language."
+
+mapping:
+  usage: "DJI control -> virtual-device action bindings. Runtime consumers validate action names, source compatibility, and conflicting targets before device creation."
+  axes:
+    usage: "Sticks, wheels and the mode switch -> continuous targets: axis_x, axis_y, axis_z, axis_rx, axis_ry, axis_rz, axis_slider0, axis_slider1, wheel/hwheel (mouse scroll), unmapped."
+    left_stick_h:
+      usage: "Left stick horizontal."
+      action:
+        type: string
+        value: axis_x
+        usage: "Target action."
+      invert:
+        type: bool
+        value: false
+        usage: "Reverse the direction."
+    left_stick_v:
+      usage: "Left stick vertical."
+      action:
+        type: string
+        value: axis_y
+        usage: "Target action."
+      invert:
+        type: bool
+        value: true
+        usage: "Reverse the direction."
+    right_stick_h:
+      usage: "Right stick horizontal."
+      action:
+        type: string
+        value: axis_z
+        usage: "Target action."
+      invert:
+        type: bool
+        value: false
+        usage: "Reverse the direction."
+    right_stick_v:
+      usage: "Right stick vertical."
+      action:
+        type: string
+        value: axis_rx
+        usage: "Target action."
+      invert:
+        type: bool
+        value: true
+        usage: "Reverse the direction."
+    left_wheel:
+      usage: "Left dial/wheel (bind action to 'wheel' for mouse scroll)."
+      action:
+        type: string
+        value: axis_slider0
+        usage: "Target action."
+      invert:
+        type: bool
+        value: false
+        usage: "Reverse the direction."
+    right_wheel:
+      usage: "Right dial/wheel (bind action to 'wheel' for mouse scroll)."
+      action:
+        type: string
+        value: axis_slider1
+        usage: "Target action."
+      invert:
+        type: bool
+        value: false
+        usage: "Reverse the direction."
+    mode:
+      type: string
+      value: axis_ry
+      usage: "Flight-mode switch (Sport/Normal/Cinema as 0/1/2)."
+  buttons:
+    usage: "Remote buttons -> discrete actions: button (next free gamepad button), button1..button79 (a specific gamepad button), wheel_up/wheel_down/hwheel_left/hwheel_right (one scroll tick per decoded state while held), unmapped."
+    rth:
+      type: string
+      value: button10
+      usage: "Return-to-home / flight-pause button."
+    record:
+      type: string
+      value: button1
+      usage: "Record button."
+    camera_half:
+      type: string
+      value: button3
+      usage: "Camera half-press (absent on the DJI RC 2)."
+    camera_full:
+      type: string
+      value: button2
+      usage: "Camera full-press / shutter."
+    c1:
+      type: string
+      value: button7
+      usage: "Custom button C1."
+    c2:
+      type: string
+      value: button8
+      usage: "Custom button C2."
