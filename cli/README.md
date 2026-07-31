@@ -16,7 +16,7 @@ monitoring, event streaming, and protocol inspection remain available.
 ## Download and start
 
 Ready-to-run binaries are available on the
-[GitHub Releases page](https://github.com/SUNsung/temp-dji-rc-joystick/releases).
+[GitHub Releases page](https://github.com/voluminor/dji-rc-joystick/releases).
 CLI asset names follow this pattern:
 
 ```text

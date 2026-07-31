@@ -8,7 +8,7 @@ DJI RC and DJI RC 2 are verified; other models are listed under
 ## Download and start
 
 Ready-to-run GUI builds for Linux and Windows are available on the
-[GitHub Releases page](https://github.com/SUNsung/temp-dji-rc-joystick/releases).
+[GitHub Releases page](https://github.com/voluminor/dji-rc-joystick/releases).
 GUI asset names start with `gui-`. Download the file for your operating system
 and architecture; building the application from source is optional.
 On Linux, mark the downloaded file as executable if necessary. Command examples
