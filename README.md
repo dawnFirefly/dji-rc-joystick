@@ -1,5 +1,11 @@
 # DJI RC Joystick
 
+## UPD 03/08/2026
+
+In the latest firmware update, port 40007 has been close via software. You can stream 40007 in `adb` mode; work is underway on a convenient software solution.
+
+---
+
 DJI RC Joystick is a set of Go modules for smart-display DJI remote
 controllers. The packages discover controllers on the local network, maintain
 TCP connections, decode DUML packets, publish control state, and map that state
