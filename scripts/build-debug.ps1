@@ -13,7 +13,7 @@ New-Item -ItemType Directory -Force tmp,dist | Out-Null
 Run-Go mod download
 Run-Go run ./_generate/language mod/data/language/translations target/language/languages_gen.go language
 Run-Go run github.com/amazing-generators/gometagen/cmd/gometagen@v0.2.0 generate -source . -format go -out target -force
-Run-Go run github.com/amazing-generators/goconfgen/cmd/goconfgen@v0.0.0-20260613145552-0e8a0e84ac12 -schema settings.yml -out target/settings -pkg settings -formats json,yaml -with-presets=false -with-interfaces=false -force
+Run-Go run github.com/amazing-generators/goconfgen/cmd/goconfgen@v0.0.0-20260613145552-0e8a0e84ac12 -schema settings.yml -out target/settings -pkg settings -formats 'json,yaml' -with-presets=false -with-interfaces=false -force
 Run-Go run github.com/amazing-generators/godepsgen/cmd/godepsgen@v0.3.0 -source . -pkg target -out target -skip-licenses -force
 Run-Go run github.com/amazing-generators/godepsgen/cmd/godepsgen@v0.3.0 -source cli/go.mod -pkg cli -out target/cli/dependencies_gen.go -skip-licenses -force
 Run-Go run github.com/amazing-generators/godepsgen/cmd/godepsgen@v0.3.0 -source gui/go.mod -pkg gui -out target/gui/dependencies_gen.go -force
